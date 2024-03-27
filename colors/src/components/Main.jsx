@@ -6,15 +6,20 @@ import colors from './colors_db.js';
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedShades, setSelectedShades] = useState([]);
+    const [active, setActive] = useState('');
 
-    const handleCategoryClick = (category, shades) => {
+    const handleCategoryClick = (category) => {
+        setActive(category);
         setSelectedCategory(category);
-        setSelectedShades(shades);
+        setSelectedShades(colors);
     };
 
     return (    
         <div className='main'>
-            <LeftPanel colors={colors} handleCategoryClick={handleCategoryClick}/>
+            <LeftPanel colors={colors} 
+            handleCategoryClick={handleCategoryClick} 
+            active={active}/>
+            
             <ColorList colors={colors}
              selectedCategory={selectedCategory}  
              selectedShades={selectedShades} />

@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   /* padding: 2rem; */
   /* text-align: center; */
@@ -35,19 +35,25 @@ ul {
 }
 .left-col-categories{
   float: left;
-  width: 310px;
-  height: 100vh;
+  width: 320px;
+  height: 1113px;
   background-color: #d6d8d8;
   font-size: 28px;
   color: 363c3c;
-
-
 }
 .right-col{
+
   width: 75%;
   float: left;
 }
+.colors-h2 {
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 28px;
+
+}
 .color-list {
+  margin-top: 1rem;
   display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
@@ -86,3 +92,61 @@ ul {
   align-self: flex-end;
   color: #363c3c;
 }
+
+
+.active {
+  color: #63b226; 
+  font-weight: bold; 
+}
+
+/* deatil view */
+.single-sw-page {
+  text-align: center; 
+}
+
+.selected-swatch{
+  width: 1040px;
+  height: 690px;
+  text-align: center; 
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.swatch-large {
+  width: 1040px;
+  height: 552px;
+  
+
+}
+
+.swatch-large-info {
+  width: 162px;
+  height: 65px;
+  margin-left: 40px;
+}
+
+.swatch-carousel {
+
+}
+.btn-div {
+  margin-top: 40px;
+}
+.btn-clear {
+ 
+  width: 260px;
+  height: 60px;
+  border: solid 1px;
+  border-radius: 10px;
+  font-size: 24px;
+  display: inline-flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+button:hover {
+  background-color: #63b226; 
+  transition: 0.7s;
+}
+
