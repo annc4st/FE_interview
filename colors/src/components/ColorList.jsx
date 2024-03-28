@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { Link, Routes, Route, useParams } from "react-router-dom";
 import "../App.css";
 
-const ColorList = ({ colors, selectedCategory }) => {
-    const [selectedSwatch, setSelectedSwatch ] = useState(null);
+const ColorList = ({ colors, selectedCategory, randomColor, showAll, setShowAll, handleShowAll, selectedSwatch, setSelectedSwatch}) => {
+  
     const [viewSelectedSwatch,setViewSelectedSwatch] = useState(false);
-    const [showAll, setShowAll] = useState(true);
+  
  
  let allShades = [];
+ useEffect(() => {
+  if (randomColor) {
+ 
+      setSelectedSwatch({
+          name: randomColor.name,
+          hex:  randomColor.hex,
+      });
+      setViewSelectedSwatch(true);
+      setShowAll(false);
+  }
+}, [randomColor]);
+
 
   if (selectedCategory) {
     allShades = colors.filter(color => color.category === selectedCategory);
@@ -16,24 +28,20 @@ const ColorList = ({ colors, selectedCategory }) => {
     colors.forEach(color => (allShades.push(color)));
 }
           
-        // click swatch
     const handleSwatchClick = (color) => {
         setSelectedSwatch(color);
         setViewSelectedSwatch(true);
         setShowAll(false);
       };
 
-      const handleShowAll = () => {
-        setSelectedSwatch(null);
-        setShowAll(true);
-      };
+      const handleClickClear = () => {
+        handleShowAll();
+      }
 
 
   return (
     <div className="colors-div">
-
     <div className="color-list">
-
 
     {showAll && allShades.map((color, index) => (
       <div key={index} className="shade-item" onClick={() => handleSwatchClick(color)}>
@@ -46,13 +54,13 @@ const ColorList = ({ colors, selectedCategory }) => {
     {!showAll && selectedSwatch && (
       <div className="single-sw-page">
         <div className="selected-swatch">
-          <h3>Selected Swatch {selectedSwatch.name}</h3>
+         
           <div className="swatch-large" style={{ backgroundColor: selectedSwatch.hex }}></div>
           <div className="swatch-large-info">{selectedSwatch.hex}</div>
          
         </div>
          <div className="btn-div">
-            <button className="btn-clear" onClick={()=> handleShowAll()}>Clear</button>
+            <button className="btn-clear" onClick={()=> handleClickClear()}>Clear</button>
         </div>
         </div>
 

@@ -1,4 +1,5 @@
 import '../App.css';
+import RandomColor from './RandomColor';
 
 
 const LeftPanel = ({colors,  handleCategoryClick, active}) => {
@@ -8,6 +9,7 @@ const LeftPanel = ({colors,  handleCategoryClick, active}) => {
   return (
  
     <div className="left-col-categories">
+   
       <ul>
         {colorCategories.map((category) => {
            return <li 

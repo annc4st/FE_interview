@@ -17,71 +17,91 @@
 .search-box {
   margin-right: 20px;
   float: right;
-
-
 }
-
 
 .main {
-
 }
+
 .header {
   background-color: #363c3c;
   height: 100px;
-  /* width: 100vh; */
 }
+
 ul {
   list-style: none;
 }
-.left-col-categories{
+
+.left {
   float: left;
-  width: 320px;
-  height: 1113px;
+  width: 25%;
+  height: 100vh;
   background-color: #d6d8d8;
-  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-col-categories {
+  padding-left: 5px;
+  font-size: 1.5em;
+  /* 28px; */
   color: 363c3c;
 }
-.right-col{
-
-  width: 75%;
-  float: left;
+.random-div {
+  margin-top: 40px;
+  text-align: center; 
 }
+
+.btn-rnd {
+  width: 90%; 
+  max-width: 260px;
+  height: 60px;
+  border: solid 1px;
+  border-radius: 10px;
+  font-size: 24px;
+  display: inline-flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+ 
 .colors-h2 {
   text-align: center;
   line-height: 2.5rem;
   font-size: 28px;
-
+}
+.colors-div{
+  width: 75%;
+  float: left;
 }
 .color-list {
-  margin-top: 1rem;
+  padding-top: 40px;
   display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
     padding-left: 16px;
     justify-content: space-evenly;
   }
-.single-list-elem {
-  width: 220px;
-  height: 261px;
-  margin-right: 10px;
-  border: solid 4px #efebeb;
-  /* box-shadow:  5px 5px 5px 5px gray;  */
-  border-radius: 10px;
-  margin: 10px;
+  .shade-item {
+    width: 220px;
+    height: 261px;
+    margin-right: 10px;
+    border: solid 4px #efebeb;
+    /* box-shadow:  2px 2px 2px 2px gray;  */
+    border-radius: 10px;
+    margin: 10px;
+  }
 
-
-}
 .color-swatch {
   margin: auto;
-  width: 218px; /* Adjust size as needed */
-  height: 208.42px; /* Adjust size as needed */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  
+  width: 218px; 
+  height: 208.42px;  
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 
-.color-info {
+.shade-info {
   font-size: 24px;
   padding-left: 21px;
   padding-top: 10px;
@@ -92,7 +112,6 @@ ul {
   align-self: flex-end;
   color: #363c3c;
 }
-
 
 .active {
   color: #63b226; 
@@ -105,24 +124,29 @@ ul {
 }
 
 .selected-swatch{
-  width: 1040px;
-  height: 690px;
+  width: 90vh;
+  max-width: 1040px;
+  height: 50vh;
   text-align: center; 
   border: 1px solid;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .swatch-large {
-  width: 1040px;
-  height: 552px;
-  
-
+  width: auto;
+  height: 40vh;
+  max-height: 60vh; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .swatch-large-info {
-  width: 162px;
-  height: 65px;
-  margin-left: 40px;
+   width: 162px;
+  height: 65px; 
+  padding-left: 40px;
+  padding-top: 20px;
+  font-size: 24px;
 }
 
 .swatch-carousel {

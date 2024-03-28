@@ -1,14 +1,20 @@
 import colors from './colors_db.js';
 
-const colorCategories = new Set(colors.map(color => color.category));
-console.log(colorCategories)
+let randomColor;
 
-const selectedCateg = "Brown";
-let arr = colors.filter(color => color.category === selectedCateg)
-console.log("arr", arr);
+randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-const selectedColors = colors.filter(color => color.category === selectedCateg);
-console.log("selected line 11: ", selectedColors)
+console.log(randomColor);
+
+// const colorCategories = new Set(colors.map(color => color.category));
+// console.log(colorCategories)
+
+// const selectedCateg = "Brown";
+// let arr = colors.filter(color => color.category === selectedCateg)
+// console.log("arr", arr);
+
+// const selectedColors = colors.filter(color => color.category === selectedCateg);
+// console.log("selected line 11: ", selectedColors)
 
 // console.log(colors.shades);
 // let arrHex = colors.shades.map( col => col.hex)
