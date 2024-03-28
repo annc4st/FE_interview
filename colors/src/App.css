@@ -174,3 +174,24 @@ button:hover {
   transition: 0.7s;
 }
 
+.pagination-div {
+   text-align: center;
+ 
+}
+.pagination {
+  list-style-type: none;
+  position: relative;
+  top: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pagination li {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 0.4em; /* Adjust as needed */
+}
+
+.activePage {
+  font-weight: bold;
+  text-decoration: underline;
+}
