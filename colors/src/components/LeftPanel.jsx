@@ -1,24 +1,21 @@
-import '../App.css';
-import RandomColor from './RandomColor';
+import "../App.css";
 
+const LeftPanel = ({ colors, handleCategoryClick, active, selectedSwatch }) => {
+  const colorCategories = [...new Set(colors.map((color) => color.category))];
 
-const LeftPanel = ({colors,  handleCategoryClick, active}) => {
-
-  const colorCategories = [...new Set(colors.map(color => color.category))] 
-  
   return (
- 
     <div className="left-col-categories">
-   
       <ul>
         {colorCategories.map((category) => {
-           return <li 
-           className={active === category ? 'active' : ''}
-           key={category} onClick={() => 
-            handleCategoryClick(category)
-            }>
-           {category}
-           </li>;
+          return (
+            <li
+              className={active === category ? "active" : null}
+              key={category}
+              onClick={selectedSwatch ? null : () => handleCategoryClick(category) } 
+            >
+              {category}
+            </li>
+          );
         })}
       </ul>
     </div>

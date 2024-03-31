@@ -2,8 +2,11 @@ import React, { useState, useEffect} from "react";
 import Pagination from "./Pagination";
 import "../App.css";
 
-const ColorList = ({ colors, selectedCategory, randomColor, showAll, setShowAll, handleShowAll, selectedSwatch, setSelectedSwatch}) => {
-    const [viewSelectedSwatch,setViewSelectedSwatch] = useState(false);
+const ColorList = ({ colors, selectedCategory, 
+  randomColor, showAll, setShowAll, 
+  handleShowAll, selectedSwatch, setSelectedSwatch,  
+  setViewSelectedSwatch, handleSwatchClick}) => {
+  
     const [currentPage, setCurrentPage] = useState(1);
     
   
@@ -28,12 +31,6 @@ const ColorList = ({ colors, selectedCategory, randomColor, showAll, setShowAll,
     colors.forEach(color => (allShades.push(color)));
 }
           
-    const handleSwatchClick = (color) => {
-        setSelectedSwatch(color);
-        setViewSelectedSwatch(true);
-        setShowAll(false);
-      };
-
       const handleClickClear = () => {
         handleShowAll();
       }

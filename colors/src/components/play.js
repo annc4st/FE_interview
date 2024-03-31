@@ -1,10 +1,16 @@
 import colors from './colors_db.js';
 
-let randomColor;
+let hexx = "#FFF"
+let res1 = colors.filter((color) => (color.hex.match(hexx)))
+console.log(res1)
 
-randomColor = colors[Math.floor(Math.random() * colors.length)];
+// let hexPrefix = "#FFF";
+// let res = colors.filter((color) => color.hex.startsWith(hexPrefix));
+// console.log(res);
 
-console.log(randomColor);
+// let randomColor;
+// randomColor = colors[Math.floor(Math.random() * colors.length)];
+// console.log(randomColor);
 
 // const colorCategories = new Set(colors.map(color => color.category));
 // console.log(colorCategories)

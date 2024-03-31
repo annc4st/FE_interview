@@ -1,31 +1,55 @@
 #root {
   max-width: 1440px;
   margin: 0 auto;
-  /* padding: 2rem; */
-  /* text-align: center; */
-}
-
-.logo {
-  width: 52px;
-  height: 52px;
- 
-}
-.logo img {
-  margin-left: 30px;
-  padding-top: 24px;
-}
-.search-box {
-  margin-right: 20px;
-  float: right;
-}
-
-.main {
 }
 
 .header {
   background-color: #363c3c;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.logo {
+  width: 3em; 
+  height: 3em; 
+}
+.logo img {
+  margin-left: 30px;
+}
+.search-box {
+  background-color: #d6d8d8;
+  border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 3em;
+  float: right;
+  height: 3em; 
+  width: 15em; 
+  display: flex; 
+  align-items: center; 
+  padding-left: 10px; 
+}
+.search-box input{
+  background-color: transparent;
+  border: none;
+  flex: 1;
+  padding-left: 5px; 
+  height: 100%;
+  border: none; 
+  outline: none;
+  
+}
+.search-box input:focus {
+  outline: none;
+}
+
+#search-icon {
+  margin-right: 10px;
+}
+/* 
+.main {
+} */
 
 ul {
   list-style: none;
@@ -45,6 +69,7 @@ ul {
   font-size: 1.5em;
   /* 28px; */
   color: 363c3c;
+  overflow: hidden;
 }
 .random-div {
   margin-top: 40px;
@@ -57,12 +82,31 @@ ul {
   height: 60px;
   border: solid 1px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 2vw; 
+ 
+  /* //24px */
   display: inline-flex;
   font-weight: bold;
   align-items: center;
   justify-content: center;
   margin: auto;
+  word-wrap: break-word;  
+  overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 1368px) {
+  .btn-rnd  {
+     font-size: 24px;
+  }
+}
+
+.no-search-results {
+  padding-top: 40px;
+  width: 75%;
+  float: left;
+  display: flex;
+  justify-content: center;
+
 }
  
 .colors-h2 {
@@ -71,11 +115,17 @@ ul {
   font-size: 28px;
 }
 .colors-div{
+  padding-top: 40px;
   width: 75%;
   float: left;
 }
+.colors-div h2 {
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 28px;
+}
 .color-list {
-  padding-top: 40px;
+  /* padding-top: 40px; */
   display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
