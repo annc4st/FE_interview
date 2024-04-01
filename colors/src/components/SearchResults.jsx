@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 
 const SearchResults = ({searchResults, handleSwatchClick}) => {
 
@@ -9,11 +9,11 @@ const SearchResults = ({searchResults, handleSwatchClick}) => {
 
      {searchResults && searchResults.length > 0 && 
      
-    <div className="color-list"> 
+    <div className="search-color-list"> 
 
     {searchResults.map((color, index) => (
         <div key={index} 
-        className="shade-item" 
+        className="shade-item" data-name={color.name}
         onClick={() => handleSwatchClick(color)}>
       <div className="color-swatch" 
       style={{ backgroundColor: color.hex }}></div>

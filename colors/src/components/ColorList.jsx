@@ -49,18 +49,20 @@ const currentColors = allShades.slice(startIndex, endIndex);
 
 
   return (
-    <div className="colors-div">
+    <div>
+  
     <div className="color-list">
 
     {showAll && currentColors.map((color, index) => (
-      <div key={index} className="shade-item" onClick={() => handleSwatchClick(color)}>
+      
+      <div key={index} className="shade-item" data-name={color.name} onClick={() => handleSwatchClick(color)}>
       <div className="color-swatch" style={{ backgroundColor: color.hex }}></div>
       <div className="shade-info">{color.hex}</div>
       </div>
 
     ))}
-  
     </div>
+
     {showAll && 
     <Pagination
         pageCount={pageCount}

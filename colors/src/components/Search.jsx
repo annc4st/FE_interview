@@ -1,5 +1,6 @@
 import React from "react";
 import {FaSearch} from 'react-icons/fa';
+import "../App.css";
 
 
 const Search = ({input, setInput, handleInputChange, setSearchResults, setShowAll}) => {

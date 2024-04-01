@@ -7,6 +7,7 @@ import RandomColor from "./RandomColor.jsx";
 import Search from "./Search.jsx";
 import SearchResults from "./SearchResults.jsx";
 import NoSearchResults from "./NoSearchResults.jsx";
+import "../App.css";
 
 const Main = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -55,7 +56,6 @@ const Main = () => {
       setSelectedShades([])
    
   } else {
-    console.log("no reults");
     setSearchResults([]);
     setShowAll(false);
     setSelectedShades([])

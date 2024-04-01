@@ -47,18 +47,20 @@
 #search-icon {
   margin-right: 10px;
 }
-/* 
 .main {
-} */
+  display: flex;
+}
+
 
 ul {
   list-style: none;
 }
 
 .left {
-  float: left;
+  flex:0 0 auto; /* Fixed width for the left panel */
+  /* float: left; */
   width: 25%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #d6d8d8;
   display: flex;
   flex-direction: column;
@@ -83,8 +85,6 @@ ul {
   border: solid 1px;
   border-radius: 10px;
   font-size: 2vw; 
- 
-  /* //24px */
   display: inline-flex;
   font-weight: bold;
   align-items: center;
@@ -115,6 +115,7 @@ ul {
   font-size: 28px;
 }
 .colors-div{
+  flex: 1;
   padding-top: 40px;
   width: 75%;
   float: left;
@@ -125,21 +126,35 @@ ul {
   font-size: 28px;
 }
 .color-list {
-  /* padding-top: 40px; */
+  padding-top: 40px;
+  /* flex-grow: 1; */
   display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
     padding-left: 16px;
     justify-content: space-evenly;
   }
+
+  .search-color-list {
+    /* flex-grow: 1; */
+  display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    padding-left: 16px;
+    justify-content: space-evenly;
+
+  }
   .shade-item {
     width: 220px;
     height: 261px;
     margin-right: 10px;
     border: solid 4px #efebeb;
-    /* box-shadow:  2px 2px 2px 2px gray;  */
     border-radius: 10px;
     margin: 10px;
+  }
+
+  .shade-item:hover {
+    border: solid 5px #63b226; 
   }
 
 .color-swatch {
@@ -161,6 +176,26 @@ ul {
   display: inline-block;
   align-self: flex-end;
   color: #363c3c;
+}
+
+/* name of the color */
+.shade-item {
+  position: relative; 
+}
+
+.shade-item:hover::before {
+  content: attr(data-name); 
+  position: absolute; 
+  top: 20%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 5px;
+  border-radius: 5px; 
+  font-size: 14px; 
+  white-space: nowrap; 
+  z-index: 999; 
 }
 
 .active {
@@ -199,9 +234,9 @@ ul {
   font-size: 24px;
 }
 
-.swatch-carousel {
+/* .swatch-carousel {
 
-}
+} */
 .btn-div {
   margin-top: 40px;
 }
@@ -238,7 +273,7 @@ button:hover {
 .pagination li {
   display: inline-block;
   font-size: 1.5em;
-  margin-right: 0.4em; /* Adjust as needed */
+  margin-right: 0.4em;
 }
 
 .activePage {
